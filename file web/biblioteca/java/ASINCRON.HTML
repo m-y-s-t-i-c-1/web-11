@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Asincron, Fetch & Async/Await</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/asincron.css">
+</head>
+
+<body>
+  <h1>🚀 Asincron, Fetch & Async/Await în JavaScript</h1>
+
+  <div class="box">
+    <h2>📦 Ce este <code>fetch</code>?</h2>
+    <p>Metodă modernă de a face cereri HTTP. Returnează o promisiune.</p>
+
+    <h3>🔧 Exemplu cu <code>fetch</code> și <code>.then()</code>:</h3>
+    <pre><code>fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Eroare:", error));</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>✨ Async/Await</h2>
+    <p>Scrii cod asincron ca și cum ar fi sincron. Ușor de citit și de gestionat erorile.</p>
+
+    <h3>🔁 Exemplu cu <code>async/await</code>:</h3>
+    <pre><code>async function incarcaDate() {
+  try {
+    const raspuns = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    const date = await raspuns.json();
+    console.log(date);
+  } catch (eroare) {
+    console.error("Eroare la fetch:", eroare);
+  }
+}</code></pre>
+
+    <button onclick="incarcaDate()">📥 Încarcă Postare</button>
+
+    <div id="result">Datele vor apărea aici...</div>
+  </div>
+
+  <div class="box">
+    <h2>📚 Alte exemple utile</h2>
+    <ul>
+      <li><strong>Promise.all</strong> – apeluri multiple în paralel</li>
+      <li><strong>Secvențiere</strong> – aștepți un răspuns, apoi lansezi altul</li>
+    </ul>
+  </div>
+
+  <div class="navigatie">
+    <a href="../java/Obiecte și intervale de timp.html" class="stanga">&#8592;</a>
+    <a href="../java/LOCALsTORAGE.HTML" class="dreapta">&#8594;</a>
+  </div>
+
+  <script>
+    async function incarcaDate() {
+      const container = document.getElementById("result");
+      container.innerHTML = "Se încarcă...";
+
+      try {
+        const raspuns = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        if (!raspuns.ok) throw new Error("Răspuns HTTP: " + raspuns.status);
+
+        const date = await raspuns.json();
+        container.innerHTML = `<h3>${date.title}</h3><p>${date.body}</p>`;
+      } catch (eroare) {
+        container.innerHTML = `<span style='color:red;'>Eroare: ${eroare.message}</span>`;
+        console.error("Eroare la fetch:", eroare);
+      }
+    }
+  </script>
+</body>
+
+</html>

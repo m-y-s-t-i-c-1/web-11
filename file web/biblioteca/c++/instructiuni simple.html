@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structuri alternative în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>🔀 Instrucțiuni simple în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Ce sunt instructiuni simple?</h2>
+    <p>Instrucțiunile simple permit programului să aleagă între mai multe căi de execuție, în funcție de condiții
+      logice.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Instrucțiunea <code>if</code></h2>
+    <pre><code>int x = 10;
+if (x &gt; 5) {
+    cout &lt;&lt; "x este mai mare decât 5" &lt;&lt; endl;
+}</code></pre>
+    <p><strong>Explicație:</strong> Dacă expresia <code>x &gt; 5</code> este adevărată, codul din acolade se execută.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 <code>if...else</code></h2>
+    <pre><code>int x = 3;
+if (x &gt;= 5) {
+    cout &lt;&lt; "x este cel puțin 5" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "x este mai mic decât 5" &lt;&lt; endl;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 <code>if...else if...else</code></h2>
+    <pre><code>int nota = 8;
+if (nota &gt;= 9) {
+    cout &lt;&lt; "Excelent" &lt;&lt; endl;
+} else if (nota &gt;= 7) {
+    cout &lt;&lt; "Bine" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "Necesită îmbunătățiri" &lt;&lt; endl;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Instrucțiunea <code>switch</code></h2>
+    <pre><code>int zi = 3;
+switch (zi) {
+    case 1:
+        cout &lt;&lt; "Luni"; break;
+    case 2:
+        cout &lt;&lt; "Marți"; break;
+    case 3:
+        cout &lt;&lt; "Miercuri"; break;
+    default:
+        cout &lt;&lt; "Zi necunoscută";
+}</code></pre>
+    <p><strong>Important:</strong> <code>switch</code> funcționează doar cu tipuri întregi sau <code>char</code>. Fără
+      <code>break</code>, execuția continuă în jos.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu propus</h2>
+    <p>Scrie un program care citește un număr și afișează dacă este pozitiv, negativ sau zero.</p>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout &lt;&lt; "Introdu un număr: ";
+    cin &gt;&gt; n;
+
+    if (n &gt; 0)
+        cout &lt;&lt; "Numărul este pozitiv";
+    else if (n &lt; 0)
+        cout &lt;&lt; "Numărul este negativ";
+    else
+        cout &lt;&lt; "Numărul este zero";
+
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/elemente de baza.html">&#8592; Înapoi</a>
+    <a href="../c++/instructiuni repetetive.html" class="dreapta">Înainte &#8594;</a>
+  </div>
+</body>
+
+</html>

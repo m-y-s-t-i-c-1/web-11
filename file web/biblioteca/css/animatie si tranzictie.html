@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - Pagina 8: Animations și Transitions</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareHTML.css">
+</head>
+
+<body>
+  <h1>CSS - Pagina 8: Animations și Transitions</h1>
+
+  <h2>1. Proprietatea <code>transition</code></h2>
+  <p>Proprietatea <code>transition</code> permite modificarea treptată a unei proprietăți CSS atunci când utilizatorul
+    interacționează cu elementul (de exemplu, la hover). În exemplul de mai jos, un element se rotește și își schimbă
+    culoarea:</p>
+
+  <div class="transition-box"></div>
+
+  <h2>2. Proprietatea <code>animation</code></h2>
+  <p>Proprietatea <code>animation</code> permite crearea de animații mai complexe, care se pot mișca, schimba culoarea,
+    dimensiunea, etc. în funcție de cadrele definite de utilizator. Exemplul de mai jos arată un element care se mișcă
+    stânga-dreapta:</p>
+
+  <div class="animation-box"></div>
+
+  <h2>3. Explicații și parametri</h2>
+  <ul>
+    <li><strong>Transition</strong>:
+      <ul>
+        <li><code>transition-property</code> – proprietatea care va fi animată (de exemplu,
+          <code>background-color</code>, <code>transform</code>).</li>
+        <li><code>transition-duration</code> – timpul pe care îl ia tranziția (de exemplu, <code>0.5s</code>).</li>
+        <li><code>transition-timing-function</code> – cum se va mișca tranziția (de exemplu, <code>ease-in-out</code>).
+        </li>
+        <li><code>transition-delay</code> – întârzierile înainte de a începe tranziția.</li>
+      </ul>
+    </li>
+    <li><strong>Animation</strong>:
+      <ul>
+        <li><code>@keyframes</code> – definește stările intermediare ale animației (de exemplu, la 0%, 50%, 100%).</li>
+        <li><code>animation-name</code> – numele animației definite de <code>@keyframes</code>.</li>
+        <li><code>animation-duration</code> – durata animației.</li>
+        <li><code>animation-timing-function</code> – cum se va mișca animația (de exemplu, <code>linear</code>,
+          <code>ease</code>).</li>
+        <li><code>animation-iteration-count</code> – numărul de ori când se va repeta animația.</li>
+        <li><code>animation-delay</code> – întârzierea înainte de a începe animația.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Exercițiu</h2>
+  <p>Crează o animație de tip bounce pentru un element care se mișcă sus-jos și folosește o tranziție pentru a modifica
+    culoarea unui element la hover.</p>
+
+  <div class="navigatie">
+    <a class="stanga" href="../css/grid layout.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../css/pseudo-clase si pseudo-elemente.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

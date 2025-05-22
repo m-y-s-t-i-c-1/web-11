@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Manipularea DOM – Ghid Interactiv</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/manipulare dom.css">
+
+</head>
+
+<body>
+
+  <a href="../java/To-do liast.html" class="arrow-link arrow-left">&#8592;</a>
+  <a href="../java/evenimente.html" class="arrow-link arrow-right">&#8594;</a>
+
+  <h1>🧠 Manipularea DOM-ului – Ghid Interactiv</h1>
+
+  <div class="box">
+    <h2>🔍 Ce este DOM-ul?</h2>
+    <p>DOM-ul (Document Object Model) este o reprezentare internă a paginii HTML în memorie. Fiecare element devine un
+      „nod” pe care JavaScript îl poate accesa și modifica.</p>
+    <p class="code">document.getElementById("exemplu")</p>
+    <p id="domText">Aceasta este o propoziție care va fi schimbată.</p>
+    <button onclick="document.getElementById('domText').textContent = 'Textul DOM-ului a fost modificat!'">🔄 Schimbă
+      textul</button>
+  </div>
+
+  <div class="box">
+    <h2>🔎 Selectarea Elementelor</h2>
+    <p>Putem selecta elemente în mai multe moduri:</p>
+    <ul>
+      <li><span class="code">getElementById("id")</span> – selectează un element cu ID-ul dat.</li>
+      <li><span class="code">querySelector(".clasa")</span> – selectează primul element ce corespunde selectorului CSS.
+      </li>
+      <li><span class="code">querySelectorAll(".clasa")</span> – selectează toate elementele.</li>
+    </ul>
+    <p class="selectDemo">Paragraf 1</p>
+    <p class="selectDemo">Paragraf 2</p>
+    <button onclick="selectDemo()">🔍 Evidențiază paragrafele</button>
+  </div>
+
+  <div class="box">
+    <h2>✏️ Modificarea Conținutului și Stilurilor</h2>
+    <p><span class="code">textContent</span> este folosit pentru a seta text simplu (mai sigur decât <span
+        class="code">innerHTML</span>).</p>
+    <p><span class="code">element.style.color = 'red'</span> – schimbă culoarea cu stil inline.</p>
+    <p id="modText">Modifică acest text!</p>
+    <button onclick="modifyElement()">🎨 Aplică modificări</button>
+  </div>
+
+  <div class="box">
+    <h2>🧱 Crearea și Inserarea de Elemente</h2>
+    <p>Putem adăuga conținut nou folosind:</p>
+    <ul>
+      <li><span class="code">createElement()</span> pentru a crea un element</li>
+      <li><span class="code">appendChild()</span> pentru a-l insera</li>
+    </ul>
+    <button onclick="addParagraph()">➕ Adaugă paragraf</button>
+    <div id="createArea"></div>
+  </div>
+
+  <div class="box">
+    <h2>🖱️ Gestionarea Evenimentelor</h2>
+    <p>Folosim <span class="code">addEventListener()</span> pentru a răspunde la acțiuni.</p>
+    <p><span class="code">event.target</span> – elementul care a declanșat evenimentul.</p>
+    <button id="eventBtn">🎯 Apasă-mă</button>
+    <p id="eventMessage" class="hidden">Ai apăsat butonul!</p>
+  </div>
+
+  <div class="box">
+    <h2>🛠️ Sfaturi Practice</h2>
+    <ul>
+      <li>Folosește clase CSS pentru a ascunde/afișa: <span class="code">.hidden</span></li>
+      <li>Salvează elemente în variabile pentru performanță</li>
+      <li><span class="code">document.createDocumentFragment()</span> pentru inserări masive</li>
+    </ul>
+    <button onclick="toggleVisibility()">👁️‍🗨️ Afișează/Ascunde textul</button>
+    <p id="toggleText" class="hidden">Acest text a fost ascuns inițial.</p>
+  </div>
+
+  <script>
+    function selectDemo() {
+      const paragrafe = document.querySelectorAll(".selectDemo");
+      paragrafe.forEach(p => p.classList.toggle("highlight"));
+    }
+
+    function modifyElement() {
+      const el = document.getElementById("modText");
+      el.textContent = "Text modificat cu stil!";
+      el.style.color = "green";
+      el.style.fontSize = "18px";
+    }
+
+    function addParagraph() {
+      const zona = document.getElementById("createArea");
+      const p = document.createElement("p");
+      p.textContent = "Paragraf nou creat cu createElement() și appendChild()";
+      zona.appendChild(p);
+    }
+
+    document.getElementById("eventBtn").addEventListener("click", function () {
+      document.getElementById("eventMessage").classList.remove("hidden");
+    });
+
+    function toggleVisibility() {
+      const text = document.getElementById("toggleText");
+      text.classList.toggle("hidden");
+    }
+  </script>
+
+</body>
+
+</html>

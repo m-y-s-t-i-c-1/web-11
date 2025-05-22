@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS - Pagina 6: Flexbox</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareHTML.css">
+</head>
+
+<body>
+  <h1>CSS - Pagina 6: Flexbox</h1>
+
+  <h2>Flex Direction</h2>
+  <p>Proprietatea <code>flex-direction</code> determină direcția elementelor flexibile într-un container.</p>
+  <ul>
+    <li><code>row</code> - aliniere pe orizontală (implicit)</li>
+    <li><code>column</code> - aliniere pe verticală</li>
+    <li><code>row-reverse</code> - orizontal invers</li>
+    <li><code>column-reverse</code> - vertical invers</li>
+  </ul>
+  <div class="exemplu">
+    <p><strong>Exemplu flex-direction: row</strong></p>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </div>
+
+  <div class="exemplu">
+    <p><strong>Exemplu flex-direction: column</strong></p>
+    <div class="container-column">
+      <div class="item-column">1</div>
+      <div class="item-column">2</div>
+      <div class="item-column">3</div>
+    </div>
+  </div>
+
+  <h2>Flex Wrap</h2>
+  <p>Proprietatea <code>flex-wrap</code> controlează dacă elementele flexibile trec pe un nou rând sau coloană atunci
+    când nu mai încap într-un container.</p>
+  <ul>
+    <li><code>nowrap</code> - implicit, toate elementele pe un singur rând</li>
+    <li><code>wrap</code> - elementele vor "înfășura" pe următorul rând/coloană</li>
+    <li><code>wrap-reverse</code> - wrap invers</li>
+  </ul>
+  <div class="exemplu">
+    <p><strong>Exemplu flex-wrap: wrap</strong></p>
+    <div class="flex-wrap-container">
+      <div class="flex-wrap-item">1</div>
+      <div class="flex-wrap-item">2</div>
+      <div class="flex-wrap-item">3</div>
+      <div class="flex-wrap-item">4</div>
+      <div class="flex-wrap-item">5</div>
+      <div class="flex-wrap-item">6</div>
+    </div>
+  </div>
+
+  <div class="navigatie">
+    <a href="../css/layot display.html" class="stanga" title="Pagina 5 - Box Model">&#8592; Înapoi</a>
+    <a href="../css/grid layout.html" class="dreapta" title="Pagina 7 - Grid">Înainte &#8594;</a>
+  </div>
+</body>
+
+</html>

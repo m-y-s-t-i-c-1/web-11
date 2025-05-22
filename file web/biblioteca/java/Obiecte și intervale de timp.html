@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obiecte și Intervale de Timp în JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/obiecte si intervale de timp.css">
+</head>
+
+<body>
+  <h1>🕒 Obiecte și Intervale de Timp în JavaScript</h1>
+
+  <div class="box">
+    <h2>📅 Crearea obiectelor Date</h2>
+    <pre><code>// Data curentă
+let acum = new Date();
+
+// Data din milisecunde
+let t0 = new Date(0);
+
+// Data din șir
+let dataText = new Date("2025-04-16T12:00:00");
+
+// Data detaliată: an, lună (0-11), zi, oră, minute
+let detaliat = new Date(2025, 3, 16, 12, 30);
+
+console.log(acum);</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>🔍 Obținerea și setarea componentelor</h2>
+    <pre><code>let data = new Date();
+
+console.log(data.getFullYear());
+console.log(data.getMonth());
+console.log(data.getDate());
+
+// Setare
+data.setFullYear(2030);
+data.setMonth(0); // ianuarie</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>📆 Formatarea datelor</h2>
+    <pre><code>let data = new Date();
+
+console.log(data.toLocaleDateString("ro-RO", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+}));
+
+console.log(data.toLocaleTimeString());</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>🧮 Calculul diferențelor între date</h2>
+    <pre><code>let inceput = new Date("2025-04-01");
+let sfarsit = new Date("2025-04-16");
+
+let diferenta = sfarsit - inceput; // în milisecunde
+let zile = diferenta / (1000 * 60 * 60 * 24);
+console.log("Zile între date:", zile);</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>🕰️ Cronometru simplu</h2>
+    <button onclick="pornesteCronometru()">Start</button>
+    <button onclick="opresteCronometru()">Stop</button>
+    <p id="timp">0 secunde</p>
+    <script>
+      let startTime, interval;
+      function pornesteCronometru() {
+        startTime = Date.now();
+        interval = setInterval(() => {
+          let elapsed = Math.floor((Date.now() - startTime) / 1000);
+          document.getElementById("timp").textContent = elapsed + " secunde";
+        }, 1000);
+      }
+      function opresteCronometru() {
+        clearInterval(interval);
+      }
+    </script>
+  </div>
+
+  <div class="box">
+    <h2>⏳ Countdown până la Anul Nou</h2>
+    <p id="countdown"></p>
+    <script>
+      function actualizeazaCountdown() {
+        const acum = new Date();
+        const nouAn = new Date(acum.getFullYear() + 1, 0, 1);
+        const diferenta = nouAn - acum;
+
+        const zile = Math.floor(diferenta / (1000 * 60 * 60 * 24));
+        const ore = Math.floor((diferenta / (1000 * 60 * 60)) % 24);
+        const minute = Math.floor((diferenta / (1000 * 60)) % 60);
+        const secunde = Math.floor((diferenta / 1000) % 60);
+
+        document.getElementById("countdown").textContent =
+          `Până la Anul Nou: ${zile}z ${ore}h ${minute}m ${secunde}s`;
+      }
+      setInterval(actualizeazaCountdown, 1000);
+    </script>
+  </div>
+
+  <div class="navigatie">
+    <a href="../java/Funcții arrow, metode pe array-uri map filter.html" class="stanga">&#8592;</a>
+    <a href="../java/ASINCRON.HTML" class="dreapta">&#8594;</a>
+  </div>
+</body>
+
+</html>

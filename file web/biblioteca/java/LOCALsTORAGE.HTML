@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>localStorage în JavaScript</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/localStorage.css">
+</head>
+
+<body>
+
+  <div class="content">
+    <h1>localStorage în JavaScript</h1>
+
+    <p>În JavaScript, <code>localStorage</code> este o metodă de stocare a datelor care rămân persistente între
+      sesiunile de navigare, chiar și după închiderea și redeschiderea browser-ului.</p>
+
+    <h2>Ce este localStorage?</h2>
+    <p><code>localStorage</code> permite stocarea datelor sub formă de perechi cheie-valoare. Aceste date rămân salvate
+      în memoria locală a browserului și nu sunt șterse automat.</p>
+
+    <h3>Metodele principale:</h3>
+    <ul>
+      <li><strong>setItem(key, value):</strong> Stochează o valoare.</li>
+      <li><strong>getItem(key):</strong> Recuperează valoarea.</li>
+      <li><strong>removeItem(key):</strong> Șterge o valoare.</li>
+      <li><strong>clear():</strong> Șterge toate valorile.</li>
+      <li><strong>key(index):</strong> Returnează cheia de la o poziție dată.</li>
+    </ul>
+
+    <h2>Exemplu simplu:</h2>
+    <pre><code>const name = "Ana";
+localStorage.setItem("userName", name);
+
+const retrievedName = localStorage.getItem("userName");
+console.log("Numele salvat este:", retrievedName);</code></pre>
+
+    <h2>Ștergere:</h2>
+    <pre><code>localStorage.removeItem("userName");</code></pre>
+
+    <h2>Ștergere completă:</h2>
+    <pre><code>localStorage.clear();</code></pre>
+
+    <h2>Valori non-string:</h2>
+    <p>Folosește <code>JSON.stringify()</code> pentru a salva obiecte și <code>JSON.parse()</code> pentru a le citi:</p>
+    <pre><code>const user = { nume: "Ana", varsta: 22 };
+localStorage.setItem("utilizator", JSON.stringify(user));
+
+const dinStorage = JSON.parse(localStorage.getItem("utilizator"));
+console.log(dinStorage.nume);</code></pre>
+
+    <button onclick="storeData()">Salvează Nume</button>
+    <p id="message"></p>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../java/ASINCRON.HTML">&#8592;</a>
+    <a class="dreapta" href="../java/array si obiecte.html">&#8594;</a>
+  </div>
+
+  <script>
+    function storeData() {
+      const name = prompt("Introduceți numele dvs:");
+      if (name) {
+        localStorage.setItem("userName", name);
+        document.getElementById("message").innerText = "Numele a fost salvat: " + name;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

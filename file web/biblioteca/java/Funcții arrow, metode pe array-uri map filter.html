@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funcții Arrow și Metode pe Array-uri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/functii arow.css">
+</head>
+
+<body>
+  <h1>Funcții Arrow și Metode pe Array-uri: <code>map</code> și <code>filter</code></h1>
+
+  <div class="box">
+    <h2>➡️ Funcții Arrow</h2>
+    <p><strong>Sintaxă:</strong></p>
+    <pre><code>(a, b) => a + b
+// echivalent cu
+function(a, b) {
+  return a + b;
+}</code></pre>
+    <p><strong>Avantaje:</strong> sintaxă mai scurtă, <code>this</code> legat lexical.</p>
+  </div>
+
+  <div class="box">
+    <h2>🧭 Metoda <code>map()</code></h2>
+    <p><strong>Scop:</strong> Creează un nou array aplicând o funcție fiecărui element.</p>
+    <pre><code>const numere = [1, 2, 3];
+const dublate = numere.map(n => n * 2);
+console.log(dublate); // [2, 4, 6]</code></pre>
+
+    <p><strong>Exemplu cu obiecte:</strong></p>
+    <pre><code>const persoane = [
+  { nume: "Ana", varsta: 25 },
+  { nume: "Ion", varsta: 30 }
+];
+const numePersoane = persoane.map(p => p.nume);
+console.log(numePersoane); // ["Ana", "Ion"]</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>🔍 Metoda <code>filter()</code></h2>
+    <p><strong>Scop:</strong> Creează un nou array doar cu elementele care trec un test.</p>
+    <pre><code>const numere = [1, 2, 3, 4, 5];
+const pare = numere.filter(n => n % 2 === 0);
+console.log(pare); // [2, 4]</code></pre>
+
+    <p><strong>Exemplu cu obiecte:</strong></p>
+    <pre><code>const utilizatori = [
+  { nume: "Ana", activ: true },
+  { nume: "Ion", activ: false }
+];
+const activi = utilizatori.filter(u => u.activ);
+console.log(activi); // [{ nume: "Ana", activ: true }]</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>🔗 Combinarea <code>filter()</code> + <code>map()</code></h2>
+    <pre><code>const numere = [1, 6, 3, 8];
+const rezultat = numere.filter(n => n > 5).map(n => n * 2);
+console.log(rezultat); // [12, 16]</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>📏 Bune practici și performanță</h2>
+    <pre><code>console.time("map+filter");
+const rez = numere.filter(n => n > 2).map(n => n * 3);
+console.timeEnd("map+filter");</code></pre>
+    <p><strong>Recomandare:</strong> Folosește <code>map()</code> și <code>filter()</code> pentru claritate și concizie.
+      Pentru performanță critică, buclele tradiționale pot fi mai rapide.</p>
+  </div>
+
+  <div class="navigatie">
+    <a href="../java/evenimente.html" class="stanga">&#8592;</a>
+    <a href="../java/Obiecte și intervale de timp.html" class="dreapta">&#8594;</a>
+  </div>
+</body>
+
+</html>

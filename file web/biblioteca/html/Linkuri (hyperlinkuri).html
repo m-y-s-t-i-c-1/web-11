@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML - Linkuri (Hiperlinkuri)</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareaCSS.css">
+</head>
+
+<body>
+  <h1>HTML - Linkuri (Hiperlinkuri)</h1>
+
+  <div class="card">
+    <h2>Ce este un hiperlink?</h2>
+    <p>Un hiperlink (sau simplu <em>link</em>) este un element care permite navigarea între pagini web. În HTML,
+      linkurile sunt create cu elementul <code>&lt;a&gt;</code> (anchor).</p>
+  </div>
+
+  <div class="card">
+    <h2>Sintaxa de bază</h2>
+    <pre><code>&lt;a href="URL"&gt;Text vizibil&lt;/a&gt;</code></pre>
+    <p>Unde <code>href</code> specifică adresa de destinație, iar conținutul dintre tag-uri este textul afișat.</p>
+  </div>
+
+  <div class="card">
+    <h2>Tipuri de linkuri</h2>
+    <h3>1. Linkuri absolute</h3>
+    <pre><code>&lt;a href="https://www.example.com/pagina.html"&gt;Link absolut&lt;/a&gt;</code></pre>
+    <p>Conțin întreaga adresă URL.</p>
+
+    <h3>2. Linkuri relative</h3>
+    <pre><code>&lt;a href="pagina.html"&gt;Link relativ&lt;/a&gt;</code></pre>
+    <p>Se referă la resurse din același site.</p>
+
+    <h3>3. Linkuri pe aceeași pagină</h3>
+    <pre><code>&lt;a href="#sectiune"&gt;Salt la secțiune&lt;/a&gt;
+...
+&lt;h2 id="sectiune"&gt;Secțiunea țintă&lt;/h2&gt;</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>Atribute importante</h2>
+    <ul>
+      <li><code>target</code> - determină unde se deschide linkul:
+        <pre><code>&lt;a href="https://example.com" target="_blank"&gt;Deschide în tab nou&lt;/a&gt;</code></pre>
+      </li>
+      <li><code>title</code> - adaugă un tooltip:
+        <pre><code>&lt;a href="https://example.com" title="Mergi la Example"&gt;Example&lt;/a&gt;</code></pre>
+      </li>
+      <li><code>rel</code> - specifică relația dintre documente:
+        <pre><code>&lt;a href="https://example.com" rel="nofollow"&gt;Example&lt;/a&gt;</code></pre>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Exercițiu practic</h2>
+    <p>Creează un link care:</p>
+    <ol>
+      <li>Deschide https://www.google.com într-un tab nou</li>
+      <li>Are textul "Căutare Google"</li>
+      <li>Afișează un tooltip "Deschide Google"</li>
+    </ol>
+    <details>
+      <summary>Soluție</summary>
+      <pre><code>&lt;a href="https://www.google.com" target="_blank" title="Deschide Google"&gt;Căutare Google&lt;/a&gt;</code></pre>
+    </details>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../html/Liste.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../html/imag.html">Înainte &#8594;</a>
+  </div>
+</body>
+
+</html>

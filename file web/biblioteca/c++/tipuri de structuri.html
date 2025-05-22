@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structuri de date în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>📦 Structuri de date în C++</h1>
+
+  <div class="section">
+    <h2>🔹 1. Array (Tablouri statice)</h2>
+    <p>Stochează o colecție de elemente de același tip cu dimensiune fixă.</p>
+    <pre><code>int a[100]; // array de 100 de elemente
+a[0] = 5;
+cout &lt;&lt; a[0];</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 2. Vector (din STL - <code>&lt;vector&gt;</code>)</h2>
+    <p>Vectorii sunt tablouri dinamice care își pot schimba dimensiunea.</p>
+    <pre><code>#include &lt;vector&gt;
+using namespace std;
+
+vector&lt;int&gt; v;
+v.push_back(10);
+v.push_back(20);
+cout &lt;&lt; v[0];</code></pre>
+    <p>✅ Se poate adăuga, șterge sau redimensiona automat.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 3. Structuri (tipuri de date personalizate)</h2>
+    <p>Structurile grupează mai multe câmpuri de tipuri diferite.</p>
+    <pre><code>struct Elev {
+    string nume;
+    int varsta;
+    float media;
+};
+
+Elev e;
+e.nume = "Ana";
+e.varsta = 17;
+e.media = 9.5;
+cout &lt;&lt; e.nume &lt;&lt; " " &lt;&lt; e.media;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Vectori de structuri</h2>
+    <pre><code>vector&lt;Elev&gt; clasa;
+
+Elev e1 = {"Mihai", 16, 8.90};
+Elev e2 = {"Ioana", 17, 9.60};
+
+clasa.push_back(e1);
+clasa.push_back(e2);
+
+for (auto elev : clasa)
+    cout &lt;&lt; elev.nume &lt;&lt; " " &lt;&lt; elev.media &lt;&lt; endl;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Concluzie</h2>
+    <ul>
+      <li><strong>array</strong> – fix, rapid, simplu.</li>
+      <li><strong>vector</strong> – flexibil, preferat în majoritatea cazurilor.</li>
+      <li><strong>struct</strong> – creează tipuri de date compuse (ex: pentru elevi, produse etc).</li>
+    </ul>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/functii.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/fisiere.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

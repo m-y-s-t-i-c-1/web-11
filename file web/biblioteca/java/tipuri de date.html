@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tipuri de Date în JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/tipuri de date.css">
+</head>
+
+<body>
+
+  <a href="../java/variabile.html" class="arrow-link arrow-left" title="Înapoi">&#x2190;</a>
+  <a href="../java/operatori si conditii.html" class="arrow-link arrow-right" title="Următoarea">&#x2192;</a>
+
+  <h1>Tipuri de Date în JavaScript</h1>
+
+  <div class="card">
+    <h2>📌 Tipul <code>string</code></h2>
+    <p>Un <strong>string</strong> este o secvență de caractere, adică text. Poate fi scris între ghilimele simple
+      (<code>' '</code>) sau duble (<code>" "</code>), dar și cu backticks (<code>` `</code>) pentru <em>template
+        strings</em>.</p>
+    <p>Exemple de utilizare:</p>
+    <pre><code>let nume = "Ana";
+let mesaj = 'Salut!';
+let complet = `Bună, ${nume}!`;
+
+console.log(typeof nume); // "string"</code></pre>
+    <p><strong>Notă:</strong> Template strings permit inserarea de variabile direct în text folosind
+      <code>${...}</code>.</p>
+  </div>
+
+  <div class="card">
+    <h2>📌 Tipul <code>number</code></h2>
+    <p>Tipul <strong>number</strong> reprezintă atât numere întregi cât și zecimale. Nu există tip separat pentru
+      întregi (ca în alte limbaje).</p>
+    <p>JavaScript suportă operații matematice de bază, iar valorile pot fi pozitive, negative sau speciale
+      (<code>Infinity</code>, <code>NaN</code>).</p>
+    <pre><code>let varsta = 25;
+let pret = 19.99;
+let suma = varsta + pret;
+
+console.log(typeof suma); // "number"</code></pre>
+    <p><strong>Notă:</strong> Dacă faci o operație invalidă, vei obține <code>NaN</code> (Not a Number).</p>
+  </div>
+
+  <div class="card">
+    <h2>📌 Tipul <code>boolean</code></h2>
+    <p>Un <strong>boolean</strong> poate avea doar două valori: <code>true</code> (adevărat) sau <code>false</code>
+      (fals).</p>
+    <p>Este folosit frecvent în condiții (if/else), comparații și bucle.</p>
+    <pre><code>let esteLogat = true;
+let arePermisiune = false;
+
+console.log(typeof esteLogat); // "boolean"</code></pre>
+    <p><strong>Notă:</strong> Poți obține valori booleene și din expresii logice:</p>
+    <pre><code>let test = 5 > 3; // true
+console.log(test);</code></pre>
+  </div>
+
+</body>
+
+</html>

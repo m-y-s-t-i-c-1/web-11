@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS - Pagina 5: Layout - Display, Position, Float</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareHTML.css">
+</head>
+
+<body>
+  <h1>CSS - Pagina 5: Layout - Display, Position, Float</h1>
+
+  <h2>1. Proprietatea <code>display</code></h2>
+  <p>Determină cum este afișat un element:</p>
+  <ul>
+    <li><code>block</code> – elementul ocupă toată lățimea disponibilă</li>
+    <li><code>inline</code> – elementul se aliniază cu textul</li>
+    <li><code>inline-block</code> – se comportă ca inline, dar acceptă dimensiuni</li>
+    <li><code>none</code> – ascunde elementul</li>
+  </ul>
+
+  <div class="exemplu">
+    <div class="exemplu-title">Exemplu proprietatea <code>display</code></div>
+    <div class="display-example">
+      <div class="display-block">display: block</div>
+      <div class="display-inline">display: inline</div>
+      <div class="display-inline-block">display: inline-block</div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--neon-pink);">
+      Observați cum <code>block</code> ocupă o lățime fixă pe rând separat, <code>inline</code> este aliniat în linie cu
+      textul, iar <code>inline-block</code> are dimensiuni dar este tot în linie.
+    </p>
+  </div>
+
+  <h2>2. Proprietatea <code>position</code></h2>
+  <p>Determină modul de poziționare a elementului:</p>
+  <ul>
+    <li><code>static</code> – poziționare normală în fluxul documentului (implicit)</li>
+    <li><code>relative</code> – poziționare relativă față de poziția inițială</li>
+    <li><code>absolute</code> – poziționare absolută față de cel mai apropiat părinte poziționat</li>
+    <li><code>fixed</code> – poziționare fixă față de fereastra browserului</li>
+  </ul>
+
+  <div class="exemplu">
+    <div class="exemplu-title">Exemplu proprietatea <code>position</code></div>
+    <div class="position-example">
+      <div class="pos-static">position: static (implicit)</div>
+      <div class="pos-relative">position: relative; top: 10px; left: 20px;</div>
+      <div class="pos-absolute">position: absolute; top: 60px; left: 40px;</div>
+      <div class="pos-fixed">position: fixed; bottom: 20px; right: 20px;</div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--neon-pink);">
+      Observați că <code>relative</code> se deplasează față de poziția inițială, <code>absolute</code> iese din flux și
+      se poziționează absolut, iar <code>fixed</code> rămâne fixat în colțul ferestrei.
+    </p>
+  </div>
+
+  <h2>3. Proprietatea <code>float</code></h2>
+  <p>Permite „alinierea” elementelor la stânga sau dreapta, cu textul care curge în jur:</p>
+  <ul>
+    <li><code>float: left;</code> – elementul se lipește în partea stângă</li>
+    <li><code>float: right;</code> – elementul se lipește în partea dreaptă</li>
+    <li><code>clear</code> – împiedică elementele următoare să se înfășoare lângă elementele flotante</li>
+  </ul>
+
+  <div class="exemplu float-example clearfix">
+    <div class="float-left">float: left</div>
+    <div class="float-right">float: right</div>
+    <p>Acesta este un paragraf care înconjoară cele două blocuri flotante. Textul va curge în jurul elementelor flotante
+      până când se aplică <code>clear</code>.</p>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../css/box model.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../css/flexbox.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

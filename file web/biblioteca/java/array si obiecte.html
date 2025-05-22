@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array de Obiecte în JavaScript</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/array si obiecte.css">
+</head>
+
+<body>
+
+  <h1>Array de Obiecte în JavaScript</h1>
+
+  <div class="section">
+    <h2>Ce este un Array de Obiecte?</h2>
+    <p>Un array de obiecte este un array care conține obiecte. Fiecare obiect poate avea mai multe proprietăți. Este
+      util atunci când vrei să grupulezi mai multe elemente cu aceeași structură, dar cu date diferite.</p>
+  </div>
+
+  <div class="section">
+    <h2>Exemplu de Array de Obiecte</h2>
+    <div class="example">
+      <p>Următorul exemplu creează un array cu obiecte ce conțin informații despre utilizatori:</p>
+      <div class="code">
+        let users = [<br>
+        &nbsp;&nbsp;{ name: "Ion", age: 30, job: "Programator" },<br>
+        &nbsp;&nbsp;{ name: "Maria", age: 25, job: "Designer" },<br>
+        &nbsp;&nbsp;{ name: "Alex", age: 35, job: "Manager" }<br>
+        ];<br><br>
+
+        console.log(users[0].name); // Ion<br>
+        console.log(users[1].age); // 25<br>
+        console.log(users[2].job); // Manager
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Manipularea Elementelor din Array</h2>
+    <p>Poți accesa, modifica sau adăuga elemente în array folosind indexul sau prin metode JavaScript. Iată un exemplu:
+    </p>
+    <div class="example">
+      <p>Modificarea vârstei unui utilizator:</p>
+      <div class="code">
+        users[0].age = 31;<br>
+        console.log(users[0].age); // 31
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Filtrarea și Transformarea Array-urilor</h2>
+    <p>Poți utiliza metode precum <code>filter()</code> și <code>map()</code> pentru a manipula array-urile de obiecte.
+      Exemplu:</p>
+    <div class="example">
+      <p>Filtrarea utilizatorilor care au vârsta mai mare de 30:</p>
+      <div class="code">
+        let olderThan30 = users.filter(user => user.age > 30);<br>
+        console.log(olderThan30);<br>
+      </div>
+    </div>
+    <div class="example">
+      <p>Crearea unui nou array doar cu numele utilizatorilor:</p>
+      <div class="code">
+        let userNames = users.map(user => user.name);<br>
+        console.log(userNames); // ["Ion", "Maria", "Alex"]
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Considerații Finale</h2>
+    <p>Un array de obiecte este o structură foarte utilă pentru gestionarea datelor structurate în aplicațiile
+      JavaScript. Acesta poate fi folosit în mod eficient pentru a manipula datele din pagini dinamice, aplicații de
+      backend sau pentru a lucra cu API-uri.</p>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../java/LOCALsTORAGE.HTML">&#8592;</a>
+    <a class="dreapta" href="../java/organizarea fisierelor.html">&#8594;</a>
+  </div>
+
+</body>
+
+</html>

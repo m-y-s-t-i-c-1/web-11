@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghidul CSS - Lecții Complete</title>
+
+  <link rel="stylesheet" href="../Proiect pa programare web/surse code/fisierCss.css">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="main.html">Acasă</a></li>
+        <li><a href="CSS.html">Compilator</a></li>
+        <li><a href="pagina principala c++.html">C++</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="JavaScript.html">JavaScript</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>CSS - Ghidul Tematicilor</h1>
+
+  <div class="container">
+    <div class="teme">
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/introduceCss.html">1. Introducere în CSS</a>
+        </h2>
+        <p>Descoperă ce este CSS, cum se leagă de HTML și învață să colorați un text simplu.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/selectori.html">2. Selectori CSS</a></h2>
+        <p>Află cum să selectezi elemente HTML cu diferite tipuri de selectori și aplică stiluri.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/text si colori.html">3. Culori, fonturi și
+            text</a></h2>
+        <p>Învață să folosești culori și fonturi pentru a stiliza textul și fundalul unei pagini.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/box model.html">4. Box Model</a></h2>
+        <p>Înțelege cum funcționează marginea, bordura, padding-ul și conținutul unui element HTML.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/layot display.html">5. Layout cu Display și
+            Position</a></h2>
+        <p>Afla despre proprietățile `display` și `position` pentru a manipula poziționarea elementelor.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/flexbox.html">6. Flexbox</a></h2>
+        <p>Învață cum să folosești Flexbox pentru a construi layout-uri flexibile și responsive.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/grid layout.html">7. Grid Layout</a></h2>
+        <p>Explorează cum să creezi un layout complex folosind CSS Grid pentru a organiza conținutul.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/animatie si tranzictie.html">8. Transitions și
+            Animations</a></h2>
+        <p>Învață cum să adaugi animații și tranziții pentru un design interactiv.</p>
+      </div>
+      <div class="lecție">
+        <h2><a href="/Proiect pa programare web/file web/biblioteca/css/pseudo-clase si pseudo-elemente.html">9.
+            Responsive Design și Media Queries</a></h2>
+        <p>Descoperă cum să creezi site-uri responsive care se adaptează la diferite dimensiuni de ecran.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with <span class="heart">❤</span> for programmers | <span class="code-comment">// Keep coding amazing
+          things!</span><span class="cursor"></span></p>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.container');
+        for (let i = 0; i < 20; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          const size = Math.random() * 5 + 2;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.top = `${Math.random() * 100}%`;
+          particle.style.opacity = Math.random() * 0.5 + 0.1;
+          container.appendChild(particle);
+
+          setInterval(() => {
+            particle.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
+          }, 2000 + Math.random() * 3000);
+        }
+
+        const cards = document.querySelectorAll('.lecție');
+        cards.forEach(card => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+          });
+        });
+      });
+    </script>
+</body>
+
+</html>

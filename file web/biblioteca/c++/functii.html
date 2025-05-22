@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funcții în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>🧩 Funcții în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Ce este o funcție?</h2>
+    <p>O funcție este un bloc de cod care îndeplinește o anumită sarcină și poate fi apelat oricând avem nevoie.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Structura unei funcții</h2>
+    <pre><code>tip_return nume(parametri) {
+    // cod
+    return valoare;
+}</code></pre>
+    <p>Exemplu simplu:</p>
+    <pre><code>int patrat(int x) {
+    return x * x;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Apelul unei funcții</h2>
+    <pre><code>int r = patrat(5);
+cout &lt;&lt; "Patratul lui 5 este: " &lt;&lt; r;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Funcții fără return</h2>
+    <pre><code>void salut() {
+    cout &lt;&lt; "Salutare!";
+}</code></pre>
+    <p><code>void</code> indică faptul că funcția nu returnează nimic.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Funcții cu mai mulți parametri</h2>
+    <pre><code>int suma(int a, int b) {
+    return a + b;
+}</code></pre>
+    <p>Apel: <code>suma(3, 7)</code> → returnează 10</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu</h2>
+    <p>Scrie o funcție care verifică dacă un număr este prim:</p>
+    <pre><code>bool estePrim(int n) {
+    if (n &lt; 2) return false;
+    for (int i = 2; i * i &lt;= n; i++)
+        if (n % i == 0)
+            return false;
+    return true;
+}</code></pre>
+    <p>Apel în <code>main()</code>:</p>
+    <pre><code>int n;
+cin &gt;&gt; n;
+if (estePrim(n))
+    cout &lt;&lt; "Este prim";
+else
+    cout &lt;&lt; "Nu este prim";</code></pre>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/tablouri bidimensionale.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/tipuri de structuri.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

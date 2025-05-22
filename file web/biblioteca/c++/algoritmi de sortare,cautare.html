@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Algoritmi clasici în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>⚙️ Algoritmi clasici în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Căutare liniară</h2>
+    <p>Parcurge vectorul element cu element.</p>
+    <pre><code>int cauta(int v[], int n, int x) {
+    for (int i = 0; i &lt; n; i++)
+        if (v[i] == x)
+            return i; // găsit la poziția i
+    return -1; // nu există
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Căutare binară (vector sortat)</h2>
+    <pre><code>int cautaBinar(int v[], int n, int x) {
+    int st = 0, dr = n - 1;
+    while (st &lt;= dr) {
+        int m = (st + dr) / 2;
+        if (v[m] == x) return m;
+        else if (x &lt; v[m]) dr = m - 1;
+        else st = m + 1;
+    }
+    return -1;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Sortare prin selecție (Selection Sort)</h2>
+    <pre><code>void selectionSort(int v[], int n) {
+    for (int i = 0; i &lt; n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j &lt; n; j++)
+            if (v[j] &lt; v[minIndex])
+                minIndex = j;
+        swap(v[i], v[minIndex]);
+    }
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Sortare prin inserție (Insertion Sort)</h2>
+    <pre><code>void insertionSort(int v[], int n) {
+    for (int i = 1; i &lt; n; i++) {
+        int x = v[i], j = i - 1;
+        while (j &gt;= 0 && v[j] &gt; x) {
+            v[j+1] = v[j];
+            j--;
+        }
+        v[j+1] = x;
+    }
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Sortare rapidă (Quick Sort)</h2>
+    <pre><code>int partitie(int v[], int st, int dr) {
+    int pivot = v[dr], i = st - 1;
+    for (int j = st; j &lt; dr; j++) {
+        if (v[j] &lt;= pivot) {
+            i++;
+            swap(v[i], v[j]);
+        }
+    }
+    swap(v[i+1], v[dr]);
+    return i+1;
+}
+
+void quickSort(int v[], int st, int dr) {
+    if (st &lt; dr) {
+        int p = partitie(v, st, dr);
+        quickSort(v, st, p - 1);
+        quickSort(v, p + 1, dr);
+    }
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Sortare cu <code>sort()</code> din STL</h2>
+    <pre><code>#include &lt;algorithm&gt;
+sort(v, v + n); // sortare crescătoare</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu</h2>
+    <p>Scrie un program care citește un vector de n numere și îl sortează folosind Quick Sort.</p>
+    <p>✅ Afișează vectorul după sortare.</p>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/fisiere.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/algoritmi pe grafuri.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

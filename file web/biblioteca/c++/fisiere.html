@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fișiere în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>📁 Fișiere în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Bibliotecă necesară</h2>
+    <p>Pentru lucrul cu fișiere, se folosește biblioteca <code>&lt;fstream&gt;</code>.</p>
+    <pre><code>#include &lt;fstream&gt;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Citire din fișier</h2>
+    <p>Presupunem că avem un fișier <code>date.in</code> cu numere.</p>
+    <pre><code>#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    ifstream fin("date.in"); // deschidere fișier pentru citire
+    int x;
+    while (fin &gt;&gt; x) {
+        cout &lt;&lt; x &lt;&lt; " ";
+    }
+    fin.close(); // închidere fișier
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Scriere în fișier</h2>
+    <pre><code>#include &lt;fstream&gt;
+using namespace std;
+
+int main() {
+    ofstream fout("date.out"); // deschidere fișier pentru scriere
+    for (int i = 1; i &lt;= 5; i++)
+        fout &lt;&lt; i * i &lt;&lt; " ";
+    fout.close(); // închidere fișier
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu practic</h2>
+    <p>Fișierul <code>input.txt</code> conține n numere. Afișează suma lor în <code>output.txt</code>.</p>
+    <pre><code>#include &lt;fstream&gt;
+using namespace std;
+
+int main() {
+    ifstream in("input.txt");
+    ofstream out("output.txt");
+
+    int x, suma = 0;
+    while (in &gt;&gt; x)
+        suma += x;
+
+    out &lt;&lt; "Suma este: " &lt;&lt; suma;
+
+    in.close();
+    out.close();
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Observații</h2>
+    <ul>
+      <li>Fișierul trebuie să se afle în același director cu programul (sau să-i specifici calea completă).</li>
+      <li>Poți verifica dacă fișierul s-a deschis corect: <code>if (!fin)</code></li>
+    </ul>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/tipuri de structuri.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/algoritmi de sortare,cautare.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

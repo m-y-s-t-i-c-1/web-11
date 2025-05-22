@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/variabile.css">
+</head>
+
+<body>
+
+  <h1>Variabile în JavaScript: <code>let</code> vs <code>const</code></h1>
+
+  <div class="section">
+    <h2>Ce este <code>let</code>?</h2>
+    <p><code>let</code> este folosit pentru a declara variabile care pot fi reasignate.</p>
+    <pre><code>let numar = 5;
+numar = 10;
+console.log(numar); // 10</code></pre>
+    <p>Este bloc-scoped, adică este vizibil doar în blocul în care este definit (ex: bucle, funcții).</p>
+  </div>
+
+  <a href="../java/tipuri de date.html" class="arrow-link" title="Pagina următoare">
+    <span>&#x2192;</span>
+  </a>
+
+
+
+  <div class="section">
+    <h2>Ce este <code>const</code>?</h2>
+    <p><code>const</code> este folosit pentru a declara constante – variabile care nu pot fi reasignate după ce sunt
+      definite.</p>
+    <pre><code>const pi = 3.14;
+pi = 3.1415; // Eroare!</code></pre>
+    <p>La fel ca <code>let</code>, este bloc-scoped.</p>
+    <p>⚠️ Dacă <code>const</code> este folosit cu obiecte sau array-uri, valorile interne pot fi modificate:</p>
+    <pre><code>const persoana = { nume: "Ana" };
+persoana.nume = "Ioana"; // Este permis
+console.log(persoana);</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>Diferențe principale</h2>
+    <ul>
+      <li><code>let</code> permite reasignare, <code>const</code> nu.</li>
+      <li>Ambele sunt bloc-scoped.</li>
+      <li>Evită folosirea <code>var</code> în favoarea <code>let</code> sau <code>const</code>.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Recomandare bună de practică</h2>
+    <p>Folosește <code>const</code> implicit. Folosește <code>let</code> doar dacă știi că vei reasigna valoarea.</p>
+  </div>
+
+</body>
+
+</html>

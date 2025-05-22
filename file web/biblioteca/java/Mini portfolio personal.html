@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Portofoliu Personal - Ghid Practic</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/mini portofoliu.css">
+</head>
+
+<body>
+
+  <h1>Mini Portofoliu Personal cu HTML și CSS</h1>
+
+  <p>În această lecție construim un site simplu de prezentare personală: un <strong>portofoliu</strong> cu informații
+    despre tine și proiectele tale</p>
+
+  <h2>Ce este un portofoliu?</h2>
+  <p>Un <strong>portofoliu personal</strong> este un site unde îți prezinți:
+  <ul>
+    <li>numele și o scurtă descriere</li>
+    <li>proiectele la care ai lucrat</li>
+    <li>moduri de contact</li>
+  </ul>
+  </p>
+
+  <h2>Structura site-ului nostru</h2>
+  <ol>
+    <li>Header cu nume + descriere</li>
+    <li>Secțiune „Despre mine”</li>
+    <li>Secțiune „Proiecte”</li>
+    <li>Secțiune „Contact”</li>
+  </ol>
+
+  <h2>Exemplu de cod HTML</h2>
+  <pre><code>
+&lt;section class="portfolio"&gt;
+  &lt;h2&gt;Salut, sunt Andrei!&lt;/h2&gt;
+  &lt;p&gt;Web developer pasionat de JavaScript și design modern.&lt;/p&gt;
+
+  &lt;h3&gt;Proiectele mele:&lt;/h3&gt;
+
+  &lt;div class="card"&gt;
+    &lt;h3&gt;To-do List App&lt;/h3&gt;
+    &lt;p&gt;O aplicație simplă pentru sarcini zilnice, cu localStorage.&lt;/p&gt;
+    &lt;a href="#" target="_blank"&gt;Vezi proiectul&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class="card"&gt;
+    &lt;h3&gt;Aplicație Meteo&lt;/h3&gt;
+    &lt;p&gt>Folosește API-ul OpenWeatherMap pentru afișarea vremii.&lt;/p&gt;
+    &lt;a href="#" target="_blank"&gt;Vezi proiectul&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+  </code></pre>
+
+  <h2>Demo: Mini Portofoliu</h2>
+
+  <section class="portfolio">
+    <h2>Salut, sunt Vasile!</h2>
+    <p>Web developer pasionat de JavaScript și design modern.</p>
+
+    <h3>Proiectele mele:</h3>
+
+    <div class="card">
+      <h3>To-do List App</h3>
+      <p>O aplicație simplă pentru sarcini zilnice, cu localStorage.</p>
+      <a href="#">Vezi proiectul</a>
+    </div>
+
+    <div class="card">
+      <h3>Aplicație Meteo</h3>
+      <p>Folosește API-ul OpenWeatherMap pentru afișarea vremii.</p>
+      <a href="#">Vezi proiectul</a>
+    </div>
+  </section>
+
+  <div class="navigatie">
+    <a class="stanga" href="../java/organizarea fisierelor.html">&#8592;</a>
+    <!-- <a class="stanga" href="JavaScript.html">🏠</a> -->
+  </div>
+
+</body>
+
+</html>

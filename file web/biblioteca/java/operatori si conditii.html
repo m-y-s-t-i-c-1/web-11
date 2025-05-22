@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Operatori și Condiții în JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/operatori si conditii.css">
+
+</head>
+
+<body>
+
+  <a href="../java/tipuri de date.html" class="arrow-link arrow-left">&#8592;</a>
+  <a href="../java/bucle.html" class="arrow-link arrow-right">&#8594;</a>
+
+  <h1>Operatori și Condiții în JavaScript</h1>
+
+  <div class="card">
+    <h2>🔢 Operatori de comparație</h2>
+    <p>Operatorii de comparație sunt folosiți pentru a compara două valori. Rezultatul este întotdeauna un
+      <code>boolean</code>: <code>true</code> sau <code>false</code>.</p>
+    <ul>
+      <li><code>==</code> — egal (compară valoarea, dar nu și tipul)</li>
+      <li><code>===</code> — strict egal (compară și valoarea și tipul)</li>
+      <li><code>!=</code> — diferit</li>
+      <li><code>!==</code> — strict diferit</li>
+      <li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> — mai mare, mai mic, etc.</li>
+    </ul>
+    <pre><code>let a = 5;
+let b = "5";
+
+console.log(a == b);  // true (doar valoarea)
+console.log(a === b); // false (valoarea e aceeași, dar tipul diferit)</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>✅ Instrucțiunea <code>if / else</code></h2>
+    <p><code>if</code> permite executarea unui bloc de cod doar dacă o condiție este adevărată. <code>else</code> este
+      folosit pentru alternativa falsă.</p>
+    <pre><code>let ora = 10;
+
+if (ora &lt; 12) {
+  console.log("Bună dimineața!");
+} else {
+  console.log("Bună ziua!");
+}</code></pre>
+    <p>Poți adăuga mai multe ramuri cu <code>else if</code>:</p>
+    <pre><code>let nota = 7;
+
+if (nota >= 9) {
+  console.log("Excelent");
+} else if (nota >= 5) {
+  console.log("Promovat");
+} else {
+  console.log("Respins");
+}</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Instrucțiunea <code>switch</code></h2>
+    <p><code>switch</code> este folosit pentru a compara o valoare cu mai multe cazuri posibile. Este mai clar decât
+      multe <code>if / else</code> consecutive.</p>
+    <pre><code>let zi = "luni";
+
+switch (zi) {
+  case "luni":
+    console.log("Începe săptămâna.");
+    break;
+  case "vineri":
+    console.log("Sfârșit de săptămână aproape!");
+    break;
+  case "sâmbătă":
+  case "duminică":
+    console.log("Weekend!");
+    break;
+  default:
+    console.log("Zi necunoscută.");
+}</code></pre>
+    <p><strong>Notă:</strong> <code>break</code> oprește execuția după caz. Fără el, codul continuă cu următorul caz
+      (fall-through).</p>
+  </div>
+
+</body>
+
+</html>

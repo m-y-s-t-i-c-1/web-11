@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Algoritmi pe grafuri în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>🧮 Algoritmi pe grafuri în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Reprezentarea unui graf</h2>
+    <p>Un graf poate fi reprezentat folosind o matrice de adiacență sau o listă de adiacență. Vom folosi matricea de
+      adiacență pentru acest exemplu.</p>
+    <pre><code>const int MAX_N = 100;
+int graf[MAX_N][MAX_N]; // matrice de adiacență</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Algoritmul DFS (Depth-First Search)</h2>
+    <p>DFS parcurge graful în adâncime, explorând cât mai mult posibil de la un nod înainte de a face un backtrack.</p>
+    <pre><code>#include &lt;iostream&gt;
+#include &lt;stack&gt;
+using namespace std;
+
+void dfs(int graf[MAX_N][MAX_N], int n, int start) {
+    bool vizitat[MAX_N] = {false};
+    stack&lt;int&gt; stiva;
+    stiva.push(start);
+    vizitat[start] = true;
+
+    while (!stiva.empty()) {
+        int nod = stiva.top();
+        stiva.pop();
+        cout &lt;&lt; nod &lt;&lt; " ";
+
+        for (int i = 0; i &lt; n; i++) {
+            if (graf[nod][i] == 1 && !vizitat[i]) {
+                stiva.push(i);
+                vizitat[i] = true;
+            }
+        }
+    }
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Algoritmul BFS (Breadth-First Search)</h2>
+    <p>BFS explorează graful în lățime, vizitând toți vecinii unui nod înainte de a trece la următorul nivel.</p>
+    <pre><code>#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+void bfs(int graf[MAX_N][MAX_N], int n, int start) {
+    bool vizitat[MAX_N] = {false};
+    queue&lt;int&gt; coada;
+    coada.push(start);
+    vizitat[start] = true;
+
+    while (!coada.empty()) {
+        int nod = coada.front();
+        coada.pop();
+        cout &lt;&lt; nod &lt;&lt; " ";
+
+        for (int i = 0; i &lt; n; i++) {
+            if (graf[nod][i] == 1 && !vizitat[i]) {
+                coada.push(i);
+                vizitat[i] = true;
+            }
+        }
+    }
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu: Implementare DFS și BFS</h2>
+    <p>Implementează un program care citește un graf neorientat din fișier și aplică atât DFS cât și BFS.</p>
+    <pre><code>#include &lt;iostream&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+int graf[MAX_N][MAX_N];
+
+void dfs(int n, int start) {
+    bool vizitat[MAX_N] = {false};
+    stack&lt;int&gt; stiva;
+    stiva.push(start);
+    vizitat[start] = true;
+
+    while (!stiva.empty()) {
+        int nod = stiva.top();
+        stiva.pop();
+        cout &lt;&lt; nod &lt;&lt; " ";
+
+        for (int i = 0; i &lt; n; i++) {
+            if (graf[nod][i] == 1 && !vizitat[i]) {
+                stiva.push(i);
+                vizitat[i] = true;
+            }
+        }
+    }
+}
+
+void bfs(int n, int start) {
+    bool vizitat[MAX_N] = {false};
+    queue&lt;int&gt; coada;
+    coada.push(start);
+    vizitat[start] = true;
+
+    while (!coada.empty()) {
+        int nod = coada.front();
+        coada.pop();
+        cout &lt;&lt; nod &lt;&lt; " ";
+
+        for (int i = 0; i &lt; n; i++) {
+            if (graf[nod][i] == 1 && !vizitat[i]) {
+                coada.push(i);
+                vizitat[i] = true;
+            }
+        }
+    }
+}
+
+int main() {
+    int n, m;
+    cin &gt;&gt; n &gt;&gt; m; // numărul de noduri și muchii
+
+    // Inițializare matrice de adiacență
+    for (int i = 0; i &lt; m; i++) {
+        int u, v;
+        cin &gt;&gt; u &gt;&gt; v;
+        graf[u][v] = 1;
+        graf[v][u] = 1; // graf neorientat
+    }
+
+    cout &lt;&lt; "DFS: ";
+    dfs(n, 0); // pornire de la nodul 0
+    cout &lt;&lt; endl;
+
+    cout &lt;&lt; "BFS: ";
+    bfs(n, 0); // pornire de la nodul 0
+    cout &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Concluzie</h2>
+    <ul>
+      <li><strong>DFS</strong> folosește stiva pentru a parcurge graful în adâncime.</li>
+      <li><strong>BFS</strong> folosește coada pentru a parcurge graful în lățime.</li>
+      <li>Reprezentarea grafului cu matrice de adiacență este simplă, dar consumă multă memorie pentru grafuri mari.
+      </li>
+    </ul>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/algoritmi de sortare,cautare.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/alocarea dinamica.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

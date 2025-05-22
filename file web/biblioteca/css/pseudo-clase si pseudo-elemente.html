@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-clase și pseudo-elemente în CSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareHTML.css">
+</head>
+
+<body>
+
+  <h1>Pseudo-clase și pseudo-elemente în CSS</h1>
+
+  <h2>1. Pseudo-clase</h2>
+  <p>O pseudo-clasă se aplică unui element într-o anumită stare, cum ar fi când elementul este hover-uit, activ sau când
+    este selectat.</p>
+  <ul>
+    <li><code>:hover</code> – se aplică unui element când utilizatorul trece cu mouse-ul peste el.</li>
+    <li><code>:active</code> – se aplică unui element în momentul când este activat (de exemplu, când se face clic pe un
+      buton).</li>
+    <li><code>:focus</code> – se aplică unui element când acesta primește focus (de exemplu, când un câmp de formular
+      este selectat).</li>
+  </ul>
+
+  <div class="exemplu">
+    <p>Exemplu de <code>:hover</code> și <code>:active</code>:</p>
+    <button
+      style="padding: 0.5rem 1rem; font-weight: bold; background: var(--neon-blue); border: none; border-radius: 5px; cursor: pointer;">
+      Apasă-mă
+    </button>
+    <p style="margin-top:1rem;">Exemplu de <code>:focus</code>:</p>
+    <input type="text" placeholder="Fă clic aici"
+      style="padding: 0.5rem; border: 2px solid var(--neon-pink); border-radius: 5px; background: var(--dark-bg); color: var(--text-bright);" />
+  </div>
+
+  <h2>2. Pseudo-elemente</h2>
+  <p>Un pseudo-element este folosit pentru a aplica stiluri unor părți ale unui element, cum ar fi înainte sau după
+    conținutul acestuia.</p>
+  <ul>
+    <li><code>::before</code> – adaugă conținut înaintea unui element.</li>
+    <li><code>::after</code> – adaugă conținut după un element.</li>
+  </ul>
+
+  <div class="exemplu">
+    <p class="before-after">Exemplu de pseudo-elemente <code>::before</code> și <code>::after</code>.</p>
+  </div>
+
+  <h2>3. Pseudo-clasa <code>:nth-child()</code></h2>
+  <p>Permite aplicarea unui stil pe elemente pe baza poziției lor într-un părinte. De exemplu,
+    <code>:nth-child(odd)</code> sau <code>:nth-child(even)</code> pentru a colora alternativ rândurile.</p>
+
+  <div class="exemplu">
+    <ul class="colorate">
+      <li>Element 1</li>
+      <li>Element 2</li>
+      <li>Element 3</li>
+      <li>Element 4</li>
+    </ul>
+  </div>
+
+  <h2>Exercițiu</h2>
+  <p>Crează o listă de elemente și folosește pseudo-clasa <code>:nth-child</code> pentru a aplica stiluri diferite pe
+    elementele impare și cele pare. De asemenea, adaugă un pseudo-element <code>::before</code> pentru fiecare element
+    care adaugă un emoji înainte de text.</p>
+
+  <div class="exemplu">
+    <ul class="exercitiu">
+      <li>🍕 Pizza</li>
+      <li>🍔 Burger</li>
+      <li>🍣 Sushi</li>
+      <li>🍦 Înghețată</li>
+    </ul>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../css/animatie si tranzictie.html">&#8592; Înapoi</a>
+  </div>
+
+</body>
+
+</html>

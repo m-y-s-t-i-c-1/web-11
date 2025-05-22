@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulare în HTML</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareaCSS.css">
+</head>
+
+<body>
+
+  <h1>Formulare în HTML</h1>
+
+  <p>Eticheta <code>&lt;form&gt;</code> este folosită pentru a crea formulare în HTML. Acestea permit utilizatorilor să
+    trimite informații către server.</p>
+
+  <h2>Structura unui formular</h2>
+  <pre><code>&lt;form action="procesare.php" method="post"&gt;
+  &lt;label for="nume"&gt;Nume:&lt;/label&gt;
+  &lt;input type="text" id="nume" name="nume"&gt;
+  &lt;label for="mesaj"&gt;Mesaj:&lt;/label&gt;
+  &lt;textarea id="mesaj" name="mesaj"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Trimite&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+  <h2>Exemplu de formular</h2>
+  <form action="procesare.php" method="post">
+    <label for="nume">Nume:</label>
+    <input type="text" id="nume" name="nume" required>
+
+    <label for="mesaj">Mesaj:</label>
+    <textarea id="mesaj" name="mesaj" rows="4" required></textarea>
+
+    <button type="submit">Trimite</button>
+  </form>
+
+  <h2>Explicație:</h2>
+  <ul>
+    <li><code>&lt;form&gt;</code> definește formularul, iar atributul <code>action</code> specifică pagina care va
+      procesa datele.</li>
+    <li><code>&lt;label&gt;</code> este folosit pentru a eticheta câmpurile de introducere.</li>
+    <li><code>&lt;input&gt;</code> este folosit pentru câmpurile de text și alte tipuri de date.</li>
+    <li><code>&lt;textarea&gt;</code> este folosit pentru câmpuri de text mai lungi.</li>
+    <li><code>&lt;button&gt;</code> este folosit pentru a trimite formularul.</li>
+  </ul>
+
+  <div class="navigatie">
+    <a class="stanga" href="../html/Tabele.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../html/span si div.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

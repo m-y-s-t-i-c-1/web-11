@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS - Pagina 7: Grid Layout</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareHTML.css">
+</head>
+
+<body>
+  <h1>CSS - Pagina 7: Grid Layout</h1>
+
+  <h2>Ce este un Grid Container?</h2>
+  <p>Un grid container este un element părinte care are <code>display: grid;</code> aplicat. El stabilește un context
+    pentru copiii săi, numiți grid items, să fie aranjați conform liniilor și coloanelor definite.</p>
+  <div class="chenar-css">
+    <p><code>display: grid;</code></p>
+  </div>
+  <p>Exemplu:</p>
+  <div class="grid-container">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+  </div>
+
+  <h2>Proprietatea <code>grid-template-columns</code></h2>
+  <p>Definește numărul și dimensiunea coloanelor din grid. Exemplu: <code>grid-template-columns: repeat(3, 1fr);</code>
+    înseamnă 3 coloane egale, fiecare luând o fracțiune egală din spațiu.</p>
+  <div class="chenar-css">
+    <p><code>grid-template-columns: repeat(3, 1fr);</code></p>
+  </div>
+  <p>Exemplu vizual cu 3 coloane:</p>
+  <div class="grid-container">
+    <div class="grid-item">Coloana 1</div>
+    <div class="grid-item">Coloana 2</div>
+    <div class="grid-item">Coloana 3</div>
+  </div>
+
+  <h2>Proprietatea <code>grid-template-rows</code></h2>
+  <p>Definește numărul și înălțimea rândurilor. Exemplu: <code>grid-template-rows: 100px 200px;</code> creează 2
+    rânduri, primul înalt 100px, al doilea 200px.</p>
+  <div class="chenar-css">
+    <p><code>grid-template-rows: 100px 200px;</code></p>
+  </div>
+  <p>Exemplu vizual cu 2 rânduri de înălțimi diferite:</p>
+  <div class="grid-container-2">
+    <div class="grid-item-2">Rând 1, Col 1</div>
+    <div class="grid-item-2">Rând 1, Col 2</div>
+    <div class="grid-item-span">Rând 2 (ocupă 2 coloane)</div>
+  </div>
+
+  <h2>Span pe coloane cu <code>grid-column: span n;</code></h2>
+  <p>Permite unui grid item să ocupe mai multe coloane. Exemplu: <code>grid-column: span 2;</code> înseamnă că elementul
+    ocupă două coloane consecutive.</p>
+  <div class="chenar-css">
+    <p><code>grid-column: span 2;</code></p>
+  </div>
+  <p>Exemplu vizual:</p>
+  <div class="grid-container-3">
+    <div class="grid-item-3">Item 1</div>
+    <div class="grid-item-span-3">Item 2 (span 2 coloane)</div>
+    <div class="grid-item-3">Item 3</div>
+  </div>
+
+  <div class="navigatie">
+    <a href="../css/flexbox.html" class="stanga" aria-label="Pagina anterioară">&#8592; Înapoi</a>
+    <a href="../css/animatie si tranzictie.html" class="dreapta" aria-label="Pagina următoare">Înainte &#8594;</a>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structuri repetitive în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>🔁 Structuri repetitive în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Ce sunt structurile repetitive?</h2>
+    <p>Structurile repetitive (buclă/loop) permit executarea repetată a unui bloc de cod cât timp o condiție este
+      adevărată.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Bucla <code>for</code></h2>
+    <pre><code>for (int i = 1; i &lt;= 5; i++) {
+    cout &lt;&lt; i &lt;&lt; " ";
+}
+// Output: 1 2 3 4 5</code></pre>
+    <p><strong>Etape:</strong> inițializare → verificare condiție → executare → incrementare</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Bucla <code>while</code></h2>
+    <pre><code>int i = 1;
+while (i &lt;= 5) {
+    cout &lt;&lt; i &lt;&lt; " ";
+    i++;
+}</code></pre>
+    <p>Verifică condiția înainte de fiecare execuție.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Bucla <code>do...while</code></h2>
+    <pre><code>int i = 1;
+do {
+    cout &lt;&lt; i &lt;&lt; " ";
+    i++;
+} while (i &lt;= 5);</code></pre>
+    <p>Execută cel puțin o dată, chiar dacă condiția e falsă de la început.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu 1</h2>
+    <p>Scrie un program care afișează toate numerele de la 1 la n (n citit de la tastatură):</p>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout &lt;&lt; "n = ";
+    cin &gt;&gt; n;
+    for (int i = 1; i &lt;= n; i++) {
+        cout &lt;&lt; i &lt;&lt; " ";
+    }
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu 2</h2>
+    <p>Calculează suma numerelor de la 1 la n:</p>
+    <pre><code>int suma = 0, i = 1;
+while (i &lt;= n) {
+    suma += i;
+    i++;
+}
+cout &lt;&lt; "Suma este: " &lt;&lt; suma;</code></pre>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/instructiuni simple.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/tablouri unidimensionale.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

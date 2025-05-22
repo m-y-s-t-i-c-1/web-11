@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Funcții și Array-uri în JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/to-do list.css">
+
+</head>
+
+<body>
+
+  <a href="../java/bucle.html" class="arrow-link arrow-left">&#8592;</a>
+  <a href="../java/Manipulare DOM-ului.html" class="arrow-link arrow-right">&#8594;</a>
+
+  <h1>Funcții și Array-uri în JavaScript</h1>
+
+  <div class="card">
+    <h2>📦 Ce este o funcție?</h2>
+    <p>O funcție este un bloc de cod care poate fi reutilizat pentru a executa o anumită acțiune. Poate primi parametri
+      și poate returna o valoare.</p>
+    <pre><code>function salut(nume) {
+  return "Salut, " + nume + "!";
+}</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>📚 Ce este un array?</h2>
+    <p>Un array este o structură de date care poate conține mai multe valori într-o singură variabilă, accesibile prin
+      index (începând de la 0).</p>
+    <pre><code>let fructe = ["măr", "banană", "cireșă"];
+console.log(fructe[0]); // măr</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>🧪 Exemplu interactiv: Afișează toate elementele unui array</h2>
+    <p>Scrie mai jos un element și apasă pe „Adaugă” pentru a-l introduce într-un array. Apoi apasă pe „Afișează” pentru
+      a vedea conținutul array-ului.</p>
+
+    <div style="text-align:center;">
+      <input type="text" id="element" placeholder="Scrie un element...">
+      <button onclick="adaugaElement()">Adaugă</button>
+      <button onclick="afiseazaArray()">Afișează</button>
+    </div>
+
+    <div id="rezultat" class="result"></div>
+  </div>
+
+  <script>
+    let elemente = [];
+
+    function adaugaElement() {
+      const input = document.getElementById("element");
+      const valoare = input.value.trim();
+      if (valoare === "") return;
+      elemente.push(valoare);
+      input.value = "";
+    }
+
+    function afiseazaArray() {
+      const divRezultat = document.getElementById("rezultat");
+      if (elemente.length === 0) {
+        divRezultat.textContent = "Array-ul este gol.";
+      } else {
+        divRezultat.textContent = "Elementele array-ului: " + elemente.join(", ");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

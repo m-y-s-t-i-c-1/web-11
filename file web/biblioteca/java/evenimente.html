@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evenimente JavaScript – Esențialul</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/evenimente.css">
+</head>
+
+<body>
+
+  <a href="../java/Manipulare DOM-ului.html" class="arrow-link arrow-left">&#8592;</a>
+  <a href="../java/Funcții arrow, metode pe array-uri map filter.html" class="arrow-link arrow-right">&#8594;</a>
+  <h1>🎯 Evenimente JavaScript – Esențialul</h1>
+
+  <div class="box">
+    <h2>🔹 Ce sunt evenimentele?</h2>
+    <p>Evenimentele sunt acțiuni declanșate de utilizator sau browser (click, tastare, scroll). Sunt cheia
+      interactivității în pagini web.</p>
+    <pre><code>document.getElementById("btn").addEventListener("click", () => {
+  alert("Buton apăsat!");
+});</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>🔸 Tipuri Comune</h2>
+    <ul>
+      <li><strong>Mouse</strong>: <code>click</code>, <code>mouseover</code>, <code>mouseout</code></li>
+      <li><strong>Tastatură</strong>: <code>keydown</code>, <code>keyup</code></li>
+      <li><strong>Formulare</strong>: <code>submit</code>, <code>focus</code>, <code>change</code></li>
+      <li><strong>Pagină</strong>: <code>load</code>, <code>resize</code>, <code>scroll</code></li>
+      <li><strong>Tactile (mobil)</strong>: <code>touchstart</code>, <code>touchend</code></li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🔧 Cum adaugi evenimente</h2>
+    <p><strong>Recomandat:</strong></p>
+    <pre><code>element.addEventListener("event", functie);</code></pre>
+    <p><strong>Evită:</strong> HTML inline <code>onclick="functie()"</code></p>
+    <p><strong>Limitat:</strong> <code>element.onclick = functie</code></p>
+  </div>
+
+  <div class="box">
+    <h2>🧩 Obiectul <code>event</code></h2>
+    <ul>
+      <li><code>target</code> – elementul declanșator</li>
+      <li><code>preventDefault()</code> – oprește comportamentul implicit</li>
+      <li><code>stopPropagation()</code> – oprește propagarea</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>🔁 Bubbling & Capturing</h2>
+    <p><strong>Bubbling</strong>: evenimentul urcă spre părinte</p>
+    <p><strong>Capturing</strong>: evenimentul coboară de la root</p>
+    <p>Folosește <code>useCapture</code> în <code>addEventListener()</code> pentru control</p>
+  </div>
+
+  <div class="box">
+    <h2>📌 Delegarea Evenimentelor</h2>
+    <pre><code>document.querySelector("ul").addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    console.log(e.target.textContent);
+  }
+});</code></pre>
+    <p>Ideal pentru elemente adăugate dinamic.</p>
+  </div>
+
+  <div class="box">
+    <h2>🎉 Evenimente Personalizate</h2>
+    <pre><code>const ev = new CustomEvent("modificare", { detail: { stare: "nouă" } });
+element.dispatchEvent(ev);</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>🚀 Avansat: Debounce & Throttle</h2>
+    <pre><code>let t;
+window.addEventListener("resize", () => {
+  clearTimeout(t);
+  t = setTimeout(() => console.log("Redimensionare completă"), 300);
+});</code></pre>
+  </div>
+
+  <div class="box">
+    <h2>✅ Recomandări</h2>
+    <ul>
+      <li>Folosește <code>addEventListener</code> (nu <code>onclick</code> în HTML)</li>
+      <li>Delegă evenimente pentru elemente dinamice</li>
+      <li>Folosește debounce/throttle pentru performanță</li>
+      <li>Utilizează funcții săgeată pentru <code>this</code></li>
+      <li>Comentează clar funcțiile de eveniment</li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

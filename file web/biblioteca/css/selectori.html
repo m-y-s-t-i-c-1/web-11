@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - Pagina 2: Selectori</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareHTML.css">
+</head>
+
+<body>
+  <h1>CSS - Pagina 2: Selectori</h1>
+
+  <h2>Selectori de bază</h2>
+  <ul>
+    <li><code>element</code> – selectează toate elementele de acel tip (ex: <code>p</code>, <code>h1</code>)</li>
+    <li><code>.clasa</code> – selectează toate elementele cu acea clasă</li>
+    <li><code>#id</code> – selectează un element unic cu acel ID</li>
+  </ul>
+
+  <h2>Selectori combinați</h2>
+  <ul>
+    <li><code>div p</code> – selectează toate &lt;p&gt; din interiorul unui &lt;div&gt;</li>
+    <li><code>ul &gt; li</code> – selectează elementele &lt;li&gt; direct în &lt;ul&gt; (nu și pe cele din subliste)
+    </li>
+    <li><code>a:hover</code> – stilizează linkul când treci cu mouse-ul peste el</li>
+  </ul>
+
+  <h2>Exemple</h2>
+  <p class="rosu">Paragraf cu clasa "rosu".</p>
+  <p id="important">Paragraf cu ID "important".</p>
+
+  <div>
+    <p>Paragraf într-un &lt;div&gt; – stilizat cu selectorul <code>div p</code>.</p>
+  </div>
+
+  <ul>
+    <li>Element principal</li>
+    <li>
+      Element cu sublistă
+      <ul>
+        <li>Subelement</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><a href="#">Link de test (hover)</a></p>
+
+  <h2>Exercițiu</h2>
+  <p>Adaugă un paragraf cu clasa <code>albastru</code> și stilizează-l în &lt;style&gt; cu culoare albastră.</p>
+
+  <div class="navigatie">
+    <a class="stanga" href="../css/introduceCss.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../css/text si colori.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Aplicație Meteo cu API în JavaScript</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/aplicatie meteo cu api.css">
+</head>
+
+<body>
+  <h1>Aplicație Meteo cu API în JavaScript</h1>
+
+  <p>În această lecție vom crea o aplicație meteo simplă folosind JavaScript și un API public:
+    <strong>OpenWeatherMap</strong>.</p>
+
+  <h2>Ce este un API?</h2>
+  <p>Un <strong>API</strong> (Application Programming Interface) este o interfață care ne permite să comunicăm cu alte
+    servicii. În cazul nostru, vom cere informații despre vreme pentru un anumit oraș.</p>
+
+  <h2>Pașii aplicației</h2>
+  <ol>
+    <li>Utilizatorul scrie numele unui oraș.</li>
+    <li>Aplicația trimite o cerere către serverul <strong>OpenWeatherMap</strong>.</li>
+    <li>Serverul răspunde cu date despre vreme (temperatură, condiții meteo etc).</li>
+    <li>Datele sunt afișate în pagină.</li>
+  </ol>
+
+  <h2>Exemplu de cod JavaScript</h2>
+
+  <pre><code>
+async function getWeather() {
+  const apiKey = 'API_KEY_TAU';
+  const city = document.getElementById('city').value;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ro`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Orașul nu a fost găsit");
+    const data = await response.json();
+
+    const output = `
+      &lt;h2&gt;${data.name}, ${data.sys.country}&lt;/h2&gt;
+      &lt;p&gt;🌡️ Temperatură: ${data.main.temp}°C&lt;/p&gt;
+      &lt;p&gt;⛅ Vreme: ${data.weather[0].description}&lt;/p&gt;
+      &lt;p&gt;💨 Vânt: ${data.wind.speed} m/s&lt;/p&gt;
+    `;
+
+    document.getElementById('weather').innerHTML = output;
+  } catch (error) {
+    document.getElementById('weather').innerHTML = 
+      `&lt;p style="color: red;"&gt;Eroare: ${error.message}&lt;/p&gt;`;
+  }
+}
+  </code></pre>
+
+  <div class="navigatie">
+    <a class="stanga" href="../java/organizarea fisierelor.html">&#8592;</a>
+    <a class="dreapta" href="../java/Mini portfolio personal.html">&#8594;</a>
+  </div>
+
+</body>
+
+</html>

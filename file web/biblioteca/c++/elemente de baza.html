@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elemente de bază în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>🌟 Elemente de bază în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Ce este C++?</h2>
+    <p>C++ este un limbaj de programare de nivel înalt, utilizat pentru dezvoltarea de aplicații rapide, jocuri, sisteme
+      și software performant. Este limbaj compilat și orientat pe performanță.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Structura unui program simplu în C++</h2>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Salut, lume!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+    <p><strong>Explicații:</strong></p>
+    <ul>
+      <li><code>#include &lt;iostream&gt;</code> – importă biblioteca pentru input/output</li>
+      <li><code>using namespace std;</code> – permite folosirea comenzilor ca <code>cout</code> fără prefixul
+        <code>std::</code>
+      </li>
+      <li><code>int main()</code> – punctul de intrare al programului</li>
+      <li><code>cout</code> – afișează text pe ecran</li>
+      <li><code>return 0;</code> – încheie programul cu succes</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Tipuri de date</h2>
+    <ul>
+      <li><code>int</code> – numere întregi</li>
+      <li><code>float</code>, <code>double</code> – numere reale</li>
+      <li><code>char</code> – caractere</li>
+      <li><code>bool</code> – valori logice: true / false</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Declararea variabilelor</h2>
+    <pre><code>int a = 10;
+float b = 3.14;
+char litera = 'A';
+bool ok = true;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Citire și afișare</h2>
+    <pre><code>int x;
+cout &lt;&lt; "Introdu un numar: ";
+cin &gt;&gt; x;
+cout &lt;&lt; "Ai introdus: " &lt;&lt; x &lt;&lt; endl;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu simplu</h2>
+    <p>Scrie un program care citește două numere întregi și afișează suma lor.</p>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b;
+    cout &lt;&lt; "a = "; cin &gt;&gt; a;
+    cout &lt;&lt; "b = "; cin &gt;&gt; b;
+    cout &lt;&lt; "Suma este: " &lt;&lt; a + b &lt;&lt; endl;
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="navigatie">
+    <a class="dreapta" href="../c++/instructiuni simple.html">&#8594;</a>
+  </div>
+
+</body>
+
+</html>

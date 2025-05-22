@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizarea fișierelor în JavaScript</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/organizarea fisierelor.css">
+</head>
+
+<body>
+  <header>
+    <h1>Organizarea fișierelor în JavaScript</h1>
+    <p>Învață cum să organizezi fișierele într-o aplicație JavaScript eficientă.</p>
+  </header>
+
+  <nav>
+    <a href="#intro">Introducere</a>
+    <a href="#modules">Module</a>
+    <a href="#structure">Structura unui proiect</a>
+    <a href="#storage">LocalStorage</a>
+    <a href="#complex">Exemple complexe</a>
+  </nav>
+
+  <section id="intro">
+    <h2>Cum funcționează fișierele în JavaScript?</h2>
+    <p>Fișierele JavaScript sunt folosite pentru a adăuga funcționalități interactive pe site-uri web. Aceste fișiere
+      sunt de obicei separate de fișierele HTML și CSS pentru a permite o mai bună organizare și întreținere a codului.
+    </p>
+    <p>Pentru a le folosi într-un document HTML, le legăm cu ajutorul tag-ului <code>&lt;script&gt;</code>:</p>
+    <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+  </section>
+
+  <section id="modules">
+    <h2>Folosirea modulelor în JavaScript</h2>
+    <p>Modulele JavaScript permit organizarea codului în fișiere separate. Fiecare fișier poate exporta funcții sau
+      variabile pe care alte fișiere le pot importa.</p>
+    <h3>Exemplu de modul:</h3>
+    <pre><code>// fișierul math.js
+export function aduna(a, b) {
+    return a + b;
+}
+
+// fișierul main.js
+import { aduna } from './math.js';
+console.log(aduna(5, 3));</code></pre>
+    <p>Cu modulele, poți separa funcționalitățile într-o aplicație mare într-un mod clar și ușor de întreținut.</p>
+  </section>
+
+  <section id="structure">
+    <h2>Structura unui proiect JavaScript</h2>
+    <p>Este important să îți organizezi fișierele într-o structură logică. Iată un exemplu de structură pentru un
+      proiect JavaScript:</p>
+    <pre><code>/proiect
+|-- /css
+|-- /js
+|   |-- app.js
+|   |-- utils.js
+|   |-- math.js
+|-- index.html</code></pre>
+    <p>Acesta este un mod eficient de a păstra fișierele organizate, astfel încât să poți lucra ușor cu ele pe măsură ce
+      proiectul crește.</p>
+  </section>
+
+  <section id="storage">
+    <h2>Folosirea LocalStorage și SessionStorage</h2>
+    <p>LocalStorage și SessionStorage sunt două metode de stocare a datelor în browser. Acestea îți permit să salvezi
+      informații pentru utilizatori, astfel încât datele să fie persistente între sesiuni.</p>
+    <h3>Exemplu de utilizare a LocalStorage:</h3>
+    <pre><code>// Salvarea unui element în LocalStorage
+localStorage.setItem('nume', 'Ion');
+
+// Preluarea elementului din LocalStorage
+let nume = localStorage.getItem('nume');
+console.log(nume);  // Ion</code></pre>
+    <p>LocalStorage stochează datele pe termen lung, în timp ce SessionStorage este folosit pentru a salva date doar
+      pentru durata sesiunii curente.</p>
+  </section>
+
+  <section id="complex">
+    <h2>Exemple de organizare în aplicații complexe</h2>
+    <p>În aplicații mai mari, este important să ai o organizare bună a fișierelor și a componentelor. De exemplu, poți
+      folosi framework-uri precum React sau Vue.js, care promovează o structură modulară a codului.</p>
+    <p>În React, de exemplu, fișierele pot fi organizate în funcție de componente, iar fiecare componentă poate fi un
+      fișier separat:</p>
+    <pre><code>/src
+|-- /components
+|   |-- Header.js
+|   |-- Footer.js
+|   |-- Content.js
+|-- App.js</code></pre>
+  </section>
+
+  <div class="navigatie">
+    <a class="stanga" href="../java/array si obiecte.html">&#8592;</a>
+    <a class="dreapta" href="../java/Aplicatie meteo cu API.html">&#8594;</a>
+  </div>
+
+</body>
+
+</html>

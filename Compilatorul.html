@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compilator Online</title>
+  <link rel="stylesheet" href="../Proiect pa programare web/surse code/cssCompilator.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../Proiect pa programare web/main.html">Acasa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Compilator Online</h1>
+
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'web')">Web (HTML/CSS/JS)</button>
+    <button class="tablinks" onclick="openTab(event, 'cpp')">C++</button>
+  </div>
+
+  <div id="web" class="tabcontent" style="display: block;">
+    <div class="editor-container">
+      <div class="editor">
+        <h2>HTML</h2>
+        <textarea id="html-code" placeholder="Scrie cod HTML aici">&lt;h1&gt;Salut lume!&lt;/h1&gt;</textarea>
+      </div>
+      <div class="editor">
+        <h2>CSS</h2>
+        <textarea id="css-code" placeholder="Scrie cod CSS aici">h1 { color: green; text-align: center; }</textarea>
+      </div>
+      <div class="editor">
+        <h2>JavaScript</h2>
+        <textarea id="js-code" placeholder="Scrie cod JavaScript aici">console.log('Salut din consola!');</textarea>
+      </div>
+    </div>
+  </div>
+
+  <div id="cpp" class="tabcontent">
+    <div class="editor">
+      <h2>Cod C++</h2>
+      <textarea id="cpp-code" placeholder="Scrie cod C++ aici">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  cout << "Salut din C++!";
+  return 0;
+}</textarea>
+    </div>
+  </div>
+
+  <button id="run-btn">Rulează Codul</button>
+
+  <h2>Rezultat:</h2>
+  <iframe id="output"></iframe>
+
+  <footer>
+    <p>Made with <span class="heart">❤</span> for programmers | <span class="code-comment">// Keep coding amazing
+        things!</span><span class="cursor"></span></p>
+  </footer>
+
+  <script src="../Proiect pa programare web/surse code/compilator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrici în C++</title>
+  <!DOCTYPE html>
+  <html lang="ro">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matrici în C++</title>
+    <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+  </head>
+
+<body>
+
+  <h1>🔢 Matrici în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Ce este o matrice?</h2>
+    <p>O matrice (tablou bidimensional) este o structură de date cu 2 dimensiuni: linii și coloane.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Declararea unei matrice</h2>
+    <pre><code>int a[100][100]; // matrice cu maxim 100 linii și 100 coloane</code></pre>
+    <p>Elementele sunt accesate astfel: <code>a[i][j]</code></p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Citirea și afișarea unei matrici</h2>
+    <pre><code>int m, n, a[100][100];
+cin &gt;&gt; m &gt;&gt; n;
+for (int i = 0; i &lt; m; i++)
+    for (int j = 0; j &lt; n; j++)
+        cin &gt;&gt; a[i][j];
+
+for (int i = 0; i &lt; m; i++) {
+    for (int j = 0; j &lt; n; j++)
+        cout &lt;&lt; a[i][j] &lt;&lt; " ";
+    cout &lt;&lt; endl;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Suma elementelor din matrice</h2>
+    <pre><code>int suma = 0;
+for (int i = 0; i &lt; m; i++)
+    for (int j = 0; j &lt; n; j++)
+        suma += a[i][j];
+cout &lt;&lt; "Suma elementelor: " &lt;&lt; suma;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Elemente de pe diagonala principală (doar dacă matricea este pătratică)</h2>
+    <pre><code>for (int i = 0; i &lt; n; i++)
+    cout &lt;&lt; a[i][i] &lt;&lt; " ";</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exercițiu</h2>
+    <p>Scrie un program care citește o matrice pătratică și determină elementul maxim de pe diagonala secundară.</p>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, a[100][100];
+    cin &gt;&gt; n;
+    for (int i = 0; i &lt; n; i++)
+        for (int j = 0; j &lt; n; j++)
+            cin &gt;&gt; a[i][j];
+
+    int maxim = a[0][n-1];
+    for (int i = 1; i &lt; n; i++) {
+        if (a[i][n-1-i] &gt; maxim)
+            maxim = a[i][n-1-i];
+    }
+    cout &lt;&lt; "Maximul de pe diagonala secundara este: " &lt;&lt; maxim;
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/tablouri unidimensionale.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/functii.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

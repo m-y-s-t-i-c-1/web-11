@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alocarea dinamică a memoriei în C++</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>💡 Alocarea dinamică a memoriei în C++</h1>
+
+  <div class="section">
+    <h2>🔹 Ce este alocarea dinamică?</h2>
+    <p>Alocarea dinamică presupune rezervarea memoriei în timpul execuției programului. Aceasta este utilă atunci când
+      nu știm dinainte dimensiunea unui obiect sau a unui array și dorim să alocăm memorie pe măsură ce programul
+      rulează.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Operatorii <code>new</code> și <code>delete</code></h2>
+    <p>În C++, operatorul <code>new</code> este folosit pentru alocarea dinamică a memoriei, iar <code>delete</code>
+      pentru eliberarea acesteia.</p>
+
+    <h3>Alocarea dinamică a unui singur element</h3>
+    <pre><code>int* p = new int;  // alocă dinamic un întreg</code></pre>
+
+    <h3>Eliberarea memoriei alocate</h3>
+    <pre><code>delete p;  // eliberează memoria alocată pentru un întreg</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Alocarea unui vector dinamic</h2>
+    <p>Putem aloca dinamic și un vector de dimensiune variabilă.</p>
+
+    <h3>Exemplu: Vector de numere întregi</h3>
+    <pre><code>int* v = new int[n];  // alocă un vector de n elemente</code></pre>
+
+    <h3>Eliberarea vectorului</h3>
+    <pre><code>delete[] v;  // eliberează vectorul alocat dinamic</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Alocarea dinamică pentru obiecte</h2>
+    <p>În C++, putem aloca dinamic și obiecte de tip clasă, folosind operatorul <code>new</code>.</p>
+
+    <h3>Exemplu: Clasă simplă</h3>
+    <pre><code>class Persoana {
+public:
+    string nume;
+    int varsta;
+
+    Persoana(string n, int v) : nume(n), varsta(v) {}
+};
+
+Persoana* p = new Persoana("Ion", 20);  // alocă dinamic un obiect Persoana</code></pre>
+
+    <h3>Eliberarea obiectului</h3>
+    <pre><code>delete p;  // eliberează memoria obiectului</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exemplu complet: Alocare dinamică pentru un vector de obiecte</h2>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Persoana {
+public:
+    string nume;
+    int varsta;
+
+    Persoana(string n, int v) : nume(n), varsta(v) {}
+
+    void afisare() {
+        cout &lt;&lt; "Nume: " &lt;&lt; nume &lt;&lt; ", Varsta: " &lt;&lt; varsta &lt;&lt; endl;
+    }
+};
+
+int main() {
+    int n;
+    cout &lt;&lt; "Introduceți numărul de persoane: ";
+    cin &gt;&gt; n;
+
+    Persoana* persoane = new Persoana[n] {  // alocă dinamic un vector de obiecte
+        Persoana("Ion", 20),
+        Persoana("Maria", 22),
+        Persoana("Alex", 21)
+    };
+
+    for (int i = 0; i &lt; n; i++) {
+        persoane[i].afisare();
+    }
+
+    delete[] persoane;  // eliberează memoria vectorului de obiecte
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Problema memoriei neeliberate (Memory Leaks)</h2>
+    <p>Este important să eliberăm memoria pe care am alocat-o dinamic, altfel vom avea scurgeri de memorie, ceea ce
+      poate cauza probleme în performanța programului.</p>
+    <p>Asigură-te că folosești întotdeauna <code>delete</code> sau <code>delete[]</code> după ce nu mai ai nevoie de
+      memoria alocată dinamic.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exemple de utilizare</h2>
+    <ul>
+      <li>Crearea unui vector de dimensiune necunoscută la începutul programului (ex. citirea unui număr variabil de
+        date de la utilizator).</li>
+      <li>Alocarea unor structuri de date complexe, cum ar fi liste legate, arbori binari etc.</li>
+    </ul>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/algoritmi pe grafuri.html">&#8592; Înapoi</a>
+    <a class="dreapta" href="../c++/clase si obicte.html">Înainte &#8594;</a>
+  </div>
+
+</body>
+
+</html>

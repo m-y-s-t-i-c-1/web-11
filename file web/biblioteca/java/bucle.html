@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bucle în JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/bucle.css">
+
+</head>
+
+<body>
+
+  <a href="../java/operatori si conditii.html" class="arrow-link arrow-left">&#8592;</a>
+  <a href="../java/To-do liast.html" class="arrow-link arrow-right">&#8594;</a>
+
+  <h1>Bucle în JavaScript: <code>for</code> și <code>while</code></h1>
+
+  <div class="card">
+    <h2>🔁 Bucla <code>for</code></h2>
+    <p>Bucla <code>for</code> este folosită atunci când știm de câte ori vrem să repetăm o acțiune.</p>
+    <pre><code>for (let i = 1; i <= 5; i++) {
+  console.log("Numărul este: " + i);
+}</code></pre>
+    <p><strong>Explicație:</strong></p>
+    <ul>
+      <li><code>let i = 1</code> – inițializarea (variabila începe de la 1)</li>
+      <li><code>i <= 5</code> – condiția (bucla continuă cât timp i este ≤ 5)</li>
+      <li><code>i++</code> – incrementarea (crește i cu 1 la fiecare pas)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🔄 Bucla <code>while</code></h2>
+    <p><code>while</code> repetă un bloc de cod atâta timp cât o condiție este adevărată. Este utilă când <strong>nu
+        știm exact câte repetări</strong> vor fi.</p>
+    <pre><code>let i = 1;
+
+while (i <= 5) {
+  console.log("Valoarea este: " + i);
+  i++;
+}</code></pre>
+    <p><strong>Notă:</strong> Dacă nu actualizăm corect variabila (<code>i++</code>), bucla poate deveni infinită!</p>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Diferențe cheie între <code>for</code> și <code>while</code></h2>
+    <ul>
+      <li><strong><code>for</code></strong>: ideal când numărul de repetări este cunoscut</li>
+      <li><strong><code>while</code></strong>: ideal când se repetă până se îndeplinește o condiție</li>
+      <li>Ambele pot realiza aceleași lucruri, dar alegerea depinde de claritatea și scopul codului</li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

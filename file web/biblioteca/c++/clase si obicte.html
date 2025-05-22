@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clase și Obiecte în C++ - Programare Orientată pe Obiecte</title>
+  <link rel="stylesheet" href="/Proiect pa programare web/surse code/stilizareC++.css">
+</head>
+
+<body>
+
+  <h1>🔧 Clase și Obiecte în C++ - Programare Orientată pe Obiecte (OOP)</h1>
+
+  <div class="section">
+    <h2>🔹 Ce este o clasă?</h2>
+    <p>O clasă este un tip de date definit de utilizator care combină datele (atribute) și funcțiile (metodele) care
+      operează asupra acestor date. Este fundamentul programării orientate pe obiecte (OOP).</p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Definirea unei clase</h2>
+    <p>În C++, o clasă este definită cu ajutorul cuvântului cheie <code>class</code>.</p>
+    <pre><code>class Persoana {
+public:
+    string nume;
+    int varsta;
+
+    // Constructor
+    Persoana(string n, int v) : nume(n), varsta(v) {}
+
+    // Metodă
+    void afisare() {
+        cout &lt;&lt; "Nume: " &lt;&lt; nume &lt;&lt; ", Varsta: " &lt;&lt; varsta &lt;&lt; endl;
+    }
+};</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Crearea unui obiect</h2>
+    <p>Un obiect este o instanță a unei clase. După ce ai definit o clasă, poți crea obiecte ale acelei clase.</p>
+    <pre><code>int main() {
+    Persoana p1("Ion", 20);  // crează un obiect de tip Persoana
+    p1.afisare();  // apelăm metoda afisare
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Constructori și Destructori</h2>
+    <p>Constructorul este o funcție specială care este apelată automat atunci când se creează un obiect. Destructorul
+      este apelat atunci când obiectul este distrus.</p>
+
+    <h3>Constructori</h3>
+    <p>Constructorii pot fi definiți pentru a inițializa obiectele la crearea lor. Există constructori implicit și
+      parametrizați.</p>
+    <pre><code>class Persoana {
+public:
+    string nume;
+    int varsta;
+
+    // Constructor parametrizat
+    Persoana(string n, int v) : nume(n), varsta(v) {}
+
+    // Constructor implicit
+    Persoana() : nume("Necunoscut"), varsta(0) {}
+
+    void afisare() {
+        cout &lt;&lt; "Nume: " &lt;&lt; nume &lt;&lt; ", Varsta: " &lt;&lt; varsta &lt;&lt; endl;
+    }
+};</code></pre>
+
+    <h3>Destructori</h3>
+    <p>Destructorii sunt utilizați pentru a curăța resursele atunci când obiectul este distrus.</p>
+    <pre><code>~Persoana() {
+    cout &lt;&lt; "Obiectul a fost distrus." &lt;&lt; endl;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Modificatori de acces: public, private, protected</h2>
+    <p>Aceste modificatoare definesc accesibilitatea atributelor și metodelor dintr-o clasă:</p>
+    <ul>
+      <li><code>public</code>: Membrii sunt accesibili din afacerea clasei.</li>
+      <li><code>private</code>: Membrii sunt accesibili doar din interiorul clasei.</li>
+      <li><code>protected</code>: Membrii sunt accesibili din interiorul clasei și al claselor derivate (în moștenire).
+      </li>
+    </ul>
+    <pre><code>class Persoana {
+private:
+    string nume;
+    int varsta;
+
+public:
+    void setNume(string n) {
+        nume = n;
+    }
+
+    string getNume() {
+        return nume;
+    }
+};</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Supraincarcarea operatorilor</h2>
+    <p>În C++, putem supraincarca operatorii pentru a le da un comportament personalizat.</p>
+    <pre><code>class Complex {
+public:
+    int real, imaginar;
+
+    Complex(int r = 0, int i = 0) : real(r), imaginar(i) {}
+
+    // Supraincarcarea operatorului +
+    Complex operator + (const Complex& c) {
+        return Complex(real + c.real, imaginar + c.imaginar);
+    }
+
+    void afisare() {
+        cout &lt;&lt; real &lt;&lt; " + " &lt;&lt; imaginar &lt;&lt; "i" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Complex c1(1, 2), c2(3, 4);
+    Complex c3 = c1 + c2;  // folosirea operatorului +
+    c3.afisare();
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Moștenirea</h2>
+    <p>Moștenirea permite crearea de noi clase pe baza unor clase existente. Clasa derivată moștenește atributele și
+      metodele clasei de bază.</p>
+    <pre><code>class Animal {
+public:
+    void mananca() {
+        cout &lt;&lt; "Animalul mananca." &lt;&lt; endl;
+    }
+};
+
+class Caine : public Animal {
+public:
+    void latra() {
+        cout &lt;&lt; "Cainele latra." &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Caine c;
+    c.mananca();  // metoda moștenită din Animal
+    c.latra();    // metoda specifică clasei Caine
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Polimorfismul</h2>
+    <p>Polimorfismul permite ca aceleași funcții să se comporte diferit pe obiecte de tipuri diferite.</p>
+    <pre><code>class Forma {
+public:
+    virtual void desen() {
+        cout &lt;&lt; "Desenăm o formă." &lt;&lt; endl;
+    }
+};
+
+class Cerc : public Forma {
+public:
+    void desen() override {
+        cout &lt;&lt; "Desenăm un cerc." &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Forma* f = new Cerc();
+    f-&gt;desen();  // va apela metoda desen() din Cerc
+    delete f;
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Exemplu complet: Clasă și moștenire</h2>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Vehicul {
+public:
+    virtual void descriere() {
+        cout &lt;&lt; "Este un vehicul." &lt;&lt; endl;
+    }
+};
+
+class Masina : public Vehicul {
+public:
+    void descriere() override {
+        cout &lt;&lt; "Este o masina." &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Vehicul* v = new Masina();
+    v-&gt;descriere();
+    delete v;
+    return 0;
+}</code></pre>
+  </div>
+
+  <div class="navigatie">
+    <a class="stanga" href="../c++/alocarea dinamica.html">&#8592; Înapoi</a>
+  </div>
+
+</body>
+
+</html>
